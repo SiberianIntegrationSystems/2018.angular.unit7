@@ -14,8 +14,6 @@ export class StageComponent implements OnInit {
   @Input()
   moveEnabled: boolean;
 
-  taskName: string;
-
   @Output()
   moveTask: EventEmitter<Task> = new EventEmitter<Task>();
 
@@ -26,9 +24,8 @@ export class StageComponent implements OnInit {
   ngOnInit() {
   }
 
-  createTask() {
-    this.stage.tasks.push(new Task(this.taskName, 1));
-    this.taskName = '';
+  addTask(task: Task) {
+    this.stage.tasks.push(task);
   }
 
   onTaskMoved($event: Task) {

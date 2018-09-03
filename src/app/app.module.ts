@@ -5,20 +5,26 @@ import {AppComponent} from './app.component';
 import {BoardComponent} from './board/board.component';
 import {StageComponent} from './stage/stage.component';
 import {TaskComponent} from './task/task.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {TaskFormComponent} from './task-form/task-form.component';
+import { FormErrorComponent } from './form-error/form-error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoardComponent,
     StageComponent,
-    TaskComponent
+    TaskComponent,
+    TaskFormComponent,
+    FormErrorComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

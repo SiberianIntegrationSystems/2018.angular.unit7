@@ -1,0 +1,20 @@
+<form (submit)="createTask()" [formGroup]="taskForm">
+  <label title="Название задачи">Название:
+    <input formControlName="taskName">
+  </label>
+  <app-form-error [control]="taskForm.controls.taskName"></app-form-error>
+  <br>
+  <label title="Описание задачи">Описание:
+    <input formControlName="taskDescription">
+  </label>
+  <app-form-error [control]="taskForm.controls.taskDescription"></app-form-error>
+  <br>
+  <label title="Исполнитель задачи">Исполнитель:
+    <select formControlName="executorName">
+      <option *ngFor="let exec of executors" [value]="exec">{{exec}}</option>
+    </select>
+  </label>
+  <app-form-error [control]="taskForm.controls.executorName"></app-form-error>
+  <br>
+  <button type="submit">Создать</button>
+</form>
