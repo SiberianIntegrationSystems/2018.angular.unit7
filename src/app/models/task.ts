@@ -1,11 +1,13 @@
 export class Task {
-  title: string;
+  id: number;
+  name: string;
   description: string;
   executor: string;
   priority = 1;
+  stageId: number;
 
   constructor(title: string, description: string, executor: string, priority: number) {
-    this.title = title;
+    this.name = title;
     this.description = description;
     this.executor = executor;
     this.priority = priority;

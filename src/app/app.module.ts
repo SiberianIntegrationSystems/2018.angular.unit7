@@ -8,6 +8,8 @@ import {TaskComponent} from './task/task.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TaskFormComponent} from './task-form/task-form.component';
 import { FormErrorComponent } from './form-error/form-error.component';
+import {HttpClientModule} from '@angular/common/http';
+import {BackendService} from './backend.service';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,10 @@ import { FormErrorComponent } from './form-error/form-error.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

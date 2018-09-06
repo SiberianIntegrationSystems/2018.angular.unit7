@@ -1,9 +1,19 @@
-<p>
-  {{stage.name}}
-</p>
-
+<div *ngIf="!isEdit">
+  <p>
+    {{stage.name}}
+  </p>
+  <button (click)="onEditStart()">Редактировать</button>
+</div>
+<div *ngIf="isEdit">
+  <input [(ngModel)]="stageName">
+  <button (click)="onEditFinish()">Сохранить</button>
+  <button (click)="onEditCancel()">Отмена</button>
+</div>
 <app-task-form (create)="addTask($event)"></app-task-form>
 
 <div *ngFor="let task of stage.tasks">
-  <app-task [moveEnabled]="moveEnabled" (moveTask)="onTaskMoved($event)" [task]="task"></app-task>
+  <app-task
+    [moveEnabled]="moveEnabled"
+    (moveTask)="onTaskMoved($event)"
+    [task]="task"></app-task>
 </div>
